@@ -1,0 +1,217 @@
+[gd_scene load_steps=15 format=3 uid="uid://ub4fdwahflla"]
+
+[ext_resource type="Script" uid="uid://gebqldagk65x" path="res://addons/drop_map/drop_map_dock/drop_map_dock.gd" id="1_ichuy"]
+[ext_resource type="Texture2D" uid="uid://uimqobvr8qfy" path="res://addons/drop_map/icons/Remove.svg" id="2_pytk2"]
+[ext_resource type="Texture2D" uid="uid://npdf13cp6lkc" path="res://addons/drop_map/icons/Edit.svg" id="3_wxpqq"]
+[ext_resource type="Texture2D" uid="uid://mh4m76dq62rb" path="res://addons/drop_map/icons/Paint.svg" id="4_2nghm"]
+[ext_resource type="ButtonGroup" uid="uid://qxy0r710jndo" path="res://addons/drop_map/drop_map_dock/mode_button_group.tres" id="4_lkpiy"]
+[ext_resource type="Texture2D" uid="uid://ddokqqdcd0jl3" path="res://addons/drop_map/icons/Eraser.svg" id="5_8h510"]
+[ext_resource type="Texture2D" uid="uid://o0nmw5d1v82p" path="res://addons/drop_map/icons/ToolMove.svg" id="6_mun6b"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_j1ttk"]
+color = Color(0.145098, 0.145098, 0.145098, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1ttk"]
+bg_color = Color(0.219608, 0.321569, 0.4, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_igsgq"]
+color = Color(0.145098, 0.145098, 0.145098, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_a2fsl"]
+color = Color(0.145098, 0.145098, 0.145098, 1)
+thickness = 3
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1ttk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_igsgq"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2fsl"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+
+[node name="DropMapDock" type="BoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 47.0
+grow_horizontal = 2
+script = ExtResource("1_ichuy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+
+[node name="CollectionControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AddSceneButton" type="Button" parent="HBoxContainer/VBoxContainer2/CollectionControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Scene
+"
+
+[node name="RemoveCollectionButton" type="Button" parent="HBoxContainer/VBoxContainer2/CollectionControls"]
+layout_mode = 2
+tooltip_text = "Remove Collection"
+icon = ExtResource("2_pytk2")
+
+[node name="EditCollectionNameButton" type="Button" parent="HBoxContainer/VBoxContainer2/CollectionControls"]
+layout_mode = 2
+tooltip_text = "Edit Collection Name"
+icon = ExtResource("3_wxpqq")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_j1ttk")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1ttk")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NewCollectionInput" type="LineEdit" parent="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "New collection name"
+max_length = 20
+expand_to_text_length = true
+emoji_menu_enabled = false
+clear_button_enabled = true
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_igsgq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CollectionContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_a2fsl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InstanceModeButton" type="Button" parent="HBoxContainer/VBoxContainer/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Toggle Instance Mode"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j1ttk")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("4_lkpiy")
+icon = ExtResource("4_2nghm")
+icon_alignment = 1
+
+[node name="RemoveModeButton" type="Button" parent="HBoxContainer/VBoxContainer/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Toggle Remove Mode"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_igsgq")
+toggle_mode = true
+button_group = ExtResource("4_lkpiy")
+icon = ExtResource("5_8h510")
+icon_alignment = 1
+
+[node name="TransformModeButton" type="Button" parent="HBoxContainer/VBoxContainer/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Toggle transform Mode"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a2fsl")
+toggle_mode = true
+button_group = ExtResource("4_lkpiy")
+icon = ExtResource("6_mun6b")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Active Scene Controls: "
+
+[node name="OpenSceneButton" type="Button" parent="HBoxContainer/VBoxContainer/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Open Scene"
+
+[node name="RemoveFromCollectionButton" type="Button" parent="HBoxContainer/VBoxContainer/HBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Remove from Collection"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_j1ttk")
+
+[node name="NoScenesInfo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "No scene collection selected OR no scenes have been added to selected collection
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 4
+vertical_scroll_mode = 0
+
+[node name="SceneListContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open File(s)"
+ok_button_text = "Open"
+file_mode = 1
+filters = PackedStringArray("*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)", "*.tscn ; Scene files", "*.scn ; Scene files (binary)")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/CollectionControls/AddSceneButton" to="." method="_on_add_scene_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/CollectionControls/RemoveCollectionButton" to="." method="_on_remove_collection_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/CollectionControls/EditCollectionNameButton" to="." method="_on_edit_collection_name_button_pressed"]
+[connection signal="text_submitted" from="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/NewCollectionInput" to="." method="_on_new_collection_input_text_submitted"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/SceneCollectionButton" to="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/SceneCollectionButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/@Button@22022" to="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/@Button@22022" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/@Button@22023" to="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/@Button@22023" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/@Button@22024" to="HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/CollectionContainer/@Button@22024" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBox/OpenSceneButton" to="." method="_on_open_scene_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBox/RemoveFromCollectionButton" to="." method="_on_remove_from_collection_button_pressed"]

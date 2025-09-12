@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DropMapDataResource" load_steps=19 format=3 uid="uid://cwif6ipyls0ab"]
+
+[ext_resource type="Script" uid="uid://c23e6nogj1dh8" path="res://addons/drop_map/save_data/scene_collection_data.gd" id="1_2yrg5"]
+[ext_resource type="PackedScene" uid="uid://b0bbxpbb2qfo7" path="res://Scenes/Rocks/rock_1.tscn" id="1_sgspt"]
+[ext_resource type="PackedScene" uid="uid://1humfy5ca1wa" path="res://Scenes/MiscProps/barrel_1.tscn" id="1_uyi14"]
+[ext_resource type="PackedScene" uid="uid://bycef7lbpcx02" path="res://Scenes/Weeds/weed_1.tscn" id="1_v1kco"]
+[ext_resource type="PackedScene" uid="uid://dsarf3je4rlv0" path="res://Scenes/Weeds/weed_2.tscn" id="2_g8slo"]
+[ext_resource type="PackedScene" uid="uid://bd1yuvnqcf4ow" path="res://Scenes/Rocks/rock_2.tscn" id="2_kb6yu"]
+[ext_resource type="PackedScene" uid="uid://bq36rkkxig2jp" path="res://Scenes/MiscProps/Pillar/Pillar.tscn" id="2_seu7a"]
+[ext_resource type="Script" uid="uid://dlmeirxiaj4p4" path="res://addons/drop_map/save_data/drop_map_data_resource.gd" id="2_v1kco"]
+[ext_resource type="PackedScene" uid="uid://copiu0mdf48ua" path="res://Scenes/Rocks/rock_4.tscn" id="3_8jkhs"]
+[ext_resource type="PackedScene" uid="uid://qnsiv3r6nl7e" path="res://Scenes/Weeds/weed_3.tscn" id="3_lgevv"]
+[ext_resource type="PackedScene" uid="uid://bej0ckf2ivlo" path="res://Scenes/Weeds/weed_4.tscn" id="4_dw1gl"]
+[ext_resource type="PackedScene" uid="uid://8ajex4mhgbih" path="res://Scenes/Weeds/weed_5.tscn" id="5_stlw1"]
+[ext_resource type="PackedScene" uid="uid://cpt6q846ykkqo" path="res://Scenes/Weeds/weed_6.tscn" id="6_mapl1"]
+[ext_resource type="PackedScene" uid="uid://dtmmjtpga3fsk" path="res://Scenes/Weeds/weed_7.tscn" id="7_l83u0"]
+[ext_resource type="PackedScene" uid="uid://c1lhlklsvn6n8" path="res://Scenes/Weeds/weed_8.tscn" id="8_b14vf"]
+
+[sub_resource type="Resource" id="Resource_2yrg5"]
+script = ExtResource("1_2yrg5")
+name = "Weeds"
+scenes = Array[PackedScene]([ExtResource("1_v1kco"), ExtResource("2_g8slo"), ExtResource("3_lgevv"), ExtResource("4_dw1gl"), ExtResource("5_stlw1"), ExtResource("6_mapl1"), ExtResource("7_l83u0"), ExtResource("8_b14vf")])
+active_scene = ExtResource("3_lgevv")
+
+[sub_resource type="Resource" id="Resource_6wthq"]
+script = ExtResource("1_2yrg5")
+name = "Rocks"
+scenes = Array[PackedScene]([ExtResource("1_sgspt"), ExtResource("2_kb6yu"), ExtResource("3_8jkhs")])
+active_scene = ExtResource("2_kb6yu")
+
+[sub_resource type="Resource" id="Resource_8jkhs"]
+script = ExtResource("1_2yrg5")
+name = "Furniture"
+scenes = Array[PackedScene]([ExtResource("1_uyi14"), ExtResource("2_seu7a")])
+active_scene = ExtResource("1_uyi14")
+
+[resource]
+script = ExtResource("2_v1kco")
+collections = Array[ExtResource("1_2yrg5")]([SubResource("Resource_2yrg5"), SubResource("Resource_6wthq"), SubResource("Resource_8jkhs")])
+active_collection = SubResource("Resource_2yrg5")

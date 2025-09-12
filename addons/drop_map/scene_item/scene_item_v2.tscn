@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b58oss0m783sx"]
+
+[ext_resource type="Script" uid="uid://crwtxrd1ud4so" path="res://addons/drop_map/scene_item/scene_item_v2.gd" id="1_qxl0y"]
+[ext_resource type="Texture2D" uid="uid://dn2mll0ykb072" path="res://addons/drop_map/icons/icon.svg" id="2_5fbd0"]
+[ext_resource type="ButtonGroup" uid="uid://b7r1taiqdffxv" path="res://addons/drop_map/scene_item/scene_item_button_group.tres" id="2_qxl0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxl0y"]
+bg_color = Color(0.398618, 0.267833, 0.487845, 1)
+
+[node name="SceneItemV2" type="MarginContainer"]
+offset_right = 136.0
+offset_bottom = 163.0
+scale = Vector2(1.00238, 1.00208)
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_qxl0y")
+
+[node name="ActivateButton" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxl0y")
+toggle_mode = true
+button_group = ExtResource("2_qxl0y")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="PreviewContainer" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PreviewTexture" type="TextureRect" parent="MarginContainer/VBoxContainer/PreviewContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_5fbd0")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="InfoContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SceneNameLabel" type="Label" parent="MarginContainer/VBoxContainer/InfoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "WEEEE"
+horizontal_alignment = 1
+
+[connection signal="toggled" from="ActivateButton" to="." method="_on_activate_button_toggled"]

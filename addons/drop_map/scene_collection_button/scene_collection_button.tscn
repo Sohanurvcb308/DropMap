@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6yc1lrhvxnns"]
+
+[ext_resource type="Script" uid="uid://csiyvaju055ta" path="res://addons/drop_map/scene_collection_button/scene_collection_button.gd" id="1_xuivu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuivu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.196078)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="SceneCollectionButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuivu")
+toggle_mode = true
+text = "Placeholder name"
+alignment = 0
+script = ExtResource("1_xuivu")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
