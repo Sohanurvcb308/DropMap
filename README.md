@@ -16,3 +16,6 @@ I'll hopefully flesh out this readme more later but I'm on my lunch break right 
 
 # Additional Note
 Please let me know if you experience any bugs and in what version of Godot you are using. 
+
+# Video Demo
+[DropMapV1Demo.webm](https://github.com/user-attachments/assets/0fe314b3-f0c3-4ed7-bb29-8a111b2291dd)
